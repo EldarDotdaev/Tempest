@@ -72,16 +72,16 @@ class Stock:
         if not isinstance(value, (int, float)):
             raise TypeError("Количество убираемых акций должно быть типа int или float")
 
-class Youtube:
-    def __init__(self, subscribers: int, views: int):
+class Youtube_channel:
+    def __init__(self, subscribers: int, all_views: int):
         """
                 Создание и подготовка к работе объекта "Youtube"
 
                 :param subscribers: Количество подписчиков
-                :param views: Количество просмотров
+                :param all_views: Количество просмотров
 
                 Примеры:
-                >>> youtube = Youtube(20000, 600000)  # инициализация экземпляра класса
+                >>> youtube = Youtube_channel(20000,600000)  # инициализация экземпляра класса
                 """
         if not isinstance(subscribers, int):
             raise TypeError("Количество подписчиков должно быть типа int")
@@ -89,11 +89,11 @@ class Youtube:
             raise ValueError("Количество подписчиков не может быть отрицательным")
         self.subscribers = subscribers
 
-        if not isinstance(views ,int):
+        if not isinstance(all_views , int):
             raise TypeError("Количество просмотров должно быть int")
-        if views <= 0:
+        if all_views <= 0:
             raise ValueError("Количество просмотров должно быть больше нуля")
-        self.stock_cost = views
+        self.stock_cost = all_views
 
     def add_sub(self,sub: int) -> None:
         """
@@ -102,7 +102,7 @@ class Youtube:
                 :param sub: Количество новых подпистиков
 
                 Примеры:
-                >>> youtube = Youtube(20000, 600000)
+                >>> youtube = Youtube_channel(20000,600000)
                 >>> youtube.add_sub(5000)
                 """
         if not isinstance(sub, int):
@@ -119,7 +119,7 @@ class Youtube:
                 то возвращается ошибка.
 
                 Примеры:
-                >>> youtube = Youtube(20000, 600000)
+                >>> youtube = Youtube_channel(20000,600000)
                 >>> youtube.remove_sub(1000)
                 """
         if not isinstance(sub, int):
@@ -134,7 +134,7 @@ class Youtube:
                 :return: Есть ли подписчики
 
                 Примеры:
-                >>> youtube = Youtube(20000, 600000)
+                >>> youtube = Youtube_channel(20000,600000)
                 >>> youtube.have_sub()
                 """
 class BankAccount:
